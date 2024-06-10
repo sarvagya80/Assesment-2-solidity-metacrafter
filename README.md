@@ -1,7 +1,8 @@
-# Assesment-2-solidity-metacrafter
+#Assesment-2-solidity-metacrafter
+REQUIREMENTS / objective 
 
 /*
-       REQUIREMENTS / objective 
+
     1. Your contract will have public variables that store the details about your coin (Token Name, Token Abbrv., Total Supply)
     2. Your contract will have a mapping of addresses to balances (address => uint)
     3. You will have a mint function that takes two parameters: an address and a value. 
@@ -14,16 +15,16 @@
        to the amount that is supposed to be burned.
 */
 
-***with keeping the objectives in th mind will start writing code for it .***
+with keeping the objectives in th mind will start writing code for it .
 
 // SPDX-License-Identifier: MIT
+
 pragma solidity 0.8.18;
 contract MyToken {
     // Public variables here
     string public name;
     string public symbol;//(Token Abbrv same thing )
     uint public totalSupply;
-
     // Mapping variable 
     mapping(address => uint) public balances;
 
