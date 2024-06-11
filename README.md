@@ -1,86 +1,62 @@
-#Assesment-2-solidity-metacrafter
+# Project Title
+Getting Started with Solidity Create a Token
+## Description
 
-REQUIREMENTS / objective 
+We will create a contract together to fulfill the following requirements:
 
-/*
+Your contract will have public variables that store the details about your coin (Token Name, Token Abbrv., Total Supply)
+Your contract will have a mapping of addresses to balances (address => uint)
+You will have a mint function that takes two parameters: an address and a value. The function then increases the total supply by that number and increases the balance of the address by that amount.
+Your contract will have a burn function, which works the opposite of the mint function, as it will destroy tokens. It will take an address and value just like the mint functions. It will then deduct the value from the total supply and from the balance of the address.
+Lastly, your burn function should have conditionals to make sure the balance of account is greater than or equal to the amount that is supposed to be burned.
 
-    1. Your contract will have public variables that store the details about your coin (Token Name, Token Abbrv., Total Supply)
-    2. Your contract will have a mapping of addresses to balances (address => uint)
-    3. You will have a mint function that takes two parameters: an address and a value. 
-       The function then increases the total supply by that number and increases the balance 
-       of the address by that amount.
-    4. Your contract will have a burn function, which works the opposite of the mint function, as it will destroy tokens. 
-       It will take an address and value just like the mint functions. It will then deduct the value from the total supply 
-       and from the balance of the address.
-    5. Lastly, your burn function should have conditionals to make sure the balance of the account is greater than or equal 
-       to the amount that is supposed to be burned.
-*/
+## Getting Started
 
-with keeping the objectives in th mind will start writing code for it .
+### Installing
 
-// SPDX-License-Identifier: MIT
+In this evaluation, we will  use Remix IDE. Remix IDE is an online tool that makes creating, assembling, implementing, and testing Ethereum blockchain smart contracts easier.
 
-     pragma solidity 0.8.18;
-    contract MyToken {
+use remix ide of version 0.8.18 to run code properly
 
-// Public variables here
+### Executing program
 
-    string public name;
-    string public symbol;
-    
-//(Token Abbrv same thing )
-   
-    uint public totalSupply;
-// Mapping variable 
-    
-    mapping(address => uint) public balances;
+**Deploy the Contract**
 
- // Event to log minting 
- 
-    event Mint(address indexed to, uint value);
-    
-// Event to log burning 
+Open Remix IDE in your web browser.
 
-    event Burn(address indexed from, uint value);
+Create a new Solidity file and name it Token.sol.
 
-// Constructor to initialize the token details
+Copy and paste the sample contract code into the file.
 
-    constructor(string memory _name, string memory _symbol) {
-        name = _name;
-        symbol = _symbol;
-        totalSupply = 0; 
-// Initial total supply is 0
+Compile the contract using the appropriate Solidity compiler version.
 
-    }
+Deploy the contract on a local or test Ethereum network.
 
-// Mint function
+**Minting Tokens**
 
-    function mint(address _to, uint _value) public {
-        totalSupply += _value;
-        balances[_to] += _value;
-        emit Mint(_to, _value); // Emit mint event
-    }
+After deploying, go to the "Deploy & Run Transactions" tab in Remix.
 
- // Burn function
- 
-    function burn(address _from, uint _value) public {
-        require(balances[_from] >= _value, "Insufficient balance to burn");
-        totalSupply -= _value;
-        balances[_from] -= _value;
-        emit Burn(_from, _value); 
- // Emit burn event
- 
-    }
+Select the mint function, enter the desired address and value, and click "Transact" to mint new tokens.
 
- // Function to check the balance of a specific address
- 
-    function balanceOf(address _account) public view returns (uint) {
-        return balances[_account];
-    }
+**Burning Tokens**
 
- // Function to get the total supply
- 
-    function getTotalSupply() public view returns (uint) {
-        return totalSupply;
-    }
-}
+Select the burn function, enter the desired address and value, and click "Transact" to burn tokens.
+
+Ensure the address has enough balance before attempting to burn tokens to avoid errors.
+
+## Help
+
+use remix ide of version 0.8.18 to run code properly
+
+## Authors
+
+Contributors names and contact info
+
+Sarvagya pathak 
+
+ adittyapathak8081@gmail.com
+
+
+## License
+
+This project is licensed under the Sarvagya pathak  
